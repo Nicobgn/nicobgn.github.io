@@ -1,0 +1,74 @@
+@use 'header'
+@use 'footer'
+@use 'home'
+@use 'contact'
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css')
+
+/* =============== GENERAL =============== */
+:root
+  font-family: 'Poppins', 'sans-serif'
+  --gen-clr: #ccc
+  --gen-bg: #151515
+  --scroll: #ccc4
+
+  --primary: #152b51cc
+  --secondary: #ccc6
+  --terciary: #aaa3
+
+  color: var(--gen-clr)
+  background: var(--gen-bg)
+  ::selection 
+    background: var(--terciary)
+
+  &:has(.light)
+    --gen-clr: #252525 
+    --gen-bg: #ececec
+    --scroll: #47474780
+
+    --primary: #31cfff91
+    --secondary: #555
+    --terciary: #0003
+
+* 
+  margin: 0
+  padding: 0
+  list-style: none
+  text-decoration: none
+  box-sizing: border-box
+
+body
+  overflow: overlay
+
+a, p, span
+  font-size: 1rem
+  color: var(--gen-clr)
+
+h1 
+  font-size: 2.5rem
+
+h2
+  font-size: 2rem
+
+h3
+  font-size: 1.6rem
+
+h4 
+  font-size: 1.3rem
+
+h5
+  font-size: 1rem
+
+h6
+  font-size: 0.8rem
+
+main
+  min-height: 100vh
+  width: 100vw
+
+::-webkit-scrollbar-thumb
+  background: transparent
+  box-shadow: inset 0 0 25px var(--scroll)
+  border-radius: 3rem

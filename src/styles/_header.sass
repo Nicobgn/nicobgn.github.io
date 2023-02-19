@@ -1,0 +1,69 @@
+@use 'defs'
+$slider-dark: #35353590
+$slider-light: #fdf554
+
+header 
+  @include defs.flexb(space-between, row)
+  padding: 1rem
+  height: 80px
+  width: 100%
+  position: absolute
+
+  &.light
+    .logo
+      filter: invert(0.8)
+
+  .logo
+    height: 50px
+    width: 100px
+    svg
+      height: 100%
+      width: 100%
+      object-fit: contain
+
+  @media (min-width: 768px)
+    padding: 2vh 5vw
+
+.mode__switch
+  position: relative
+  width: 60px
+  height: 34px
+
+  &__check
+    opacity: 0
+    height: 0
+    width: 0
+
+  &__slider
+    display: block
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: $slider-dark
+    transition: 400ms ease all
+    border-radius: 34px
+
+    &::before
+      position: absolute
+      content: ''
+      height: 26px
+      width: 26px
+      left: 4px
+      bottom: 4px
+      background: #add8e6
+      transition: 400ms ease all
+      border-radius: 50%
+
+  &__check:checked + &__slider
+      background: #ccc4
+
+      &::before
+        background: $slider-light
+        transform: translateX(26px)
+
+  &__check:checked:focus + & __slider
+      box-shadow: 0 0 1px $slider-light
+

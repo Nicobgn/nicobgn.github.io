@@ -1,0 +1,58 @@
+@use 'defs'
+
+footer
+  min-height: 35vh
+  border-radius: 45px 45px 0 0
+  background: var(--primary)
+  text-align: center
+  display: grid
+  align-content: space-between
+  padding: 10vh 5vw
+  @media (min-width: 768px)
+    padding: 10vh 15vw
+
+  h4
+    font-size: 20px
+
+  .contact__links
+    @include defs.flexb($direction: row)
+    gap: 10px
+
+    &--link
+      cursor: pointer
+      &__anchor
+        font-size: 28px
+        position: relative
+        height: 50px
+        width: 50px
+        border-radius: 30px
+        overflow: hidden
+        @include defs.flexb()
+
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 100%
+          transition: all 500ms ease
+          border-radius: 30px
+        
+        &::before
+          transition: 500ms ease-out
+          box-shadow: inset 0 0 0 2px var(--gen-clr)
+
+        &:hover::before,
+        &:focus::before
+          transition: 500ms ease-in
+          box-shadow: inset 0 0 0 60px var(--gen-clr)
+
+        i
+          transition: 500ms ease
+
+        &:hover i,
+        &:focus i
+          filter: invert(1)
+

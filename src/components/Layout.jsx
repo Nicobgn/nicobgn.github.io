@@ -1,21 +1,14 @@
 import Header from './Header'
 import Footer from './Footer'
-import { useState } from 'react'
+import { useMain } from '@/contexts/MainContext'
 
 const Layout = ({ children }) => {
-	const [toggleMode, setToggleMode] = useState(false)
-
-	const toggleDarkMode = () => {
-		setToggleMode(!toggleMode)
-	}
+	const {theme} = useMain()
 
 	return (
 		<>
-			<Header
-				modeHandler={toggleDarkMode}
-				mode={toggleMode}
-			/>
-			<main className={toggleMode ? 'light' : ''}>{children}</main>
+			<Header/>
+			<main className={theme ? 'light' : ''}>{children}</main>
 			<Footer />
 		</>
 	)

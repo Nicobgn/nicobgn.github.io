@@ -18,6 +18,7 @@ export default function Hero(){
 
 	return (
 		<section className="hero">
+			
 			<h1 className="hero__title">Backend & MySQL Developer.</h1>
 			<h2 className="hero__subtitle">
 				<span

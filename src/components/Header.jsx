@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useMain } from '@/contexts/MainContext'
 
-export default function Header({ mode, modeHandler }) {
+export default function Header() {
+	const {theme, themeHandler} = useMain()
+
 	return (
 		<>
 			<Head>
@@ -11,7 +14,7 @@ export default function Header({ mode, modeHandler }) {
 					content="width=device-width, initial-scale=1"
 				/>
 			</Head>
-			<header className={mode ? 'light' : ''}>
+			<header className={theme ? 'light' : ''}>
 				<Link
 					href={'/'}
 					className={'logo'}
@@ -28,13 +31,13 @@ export default function Header({ mode, modeHandler }) {
 						type="checkbox"
 						name="mode__switch__check"
 						className="mode__switch__check"
-						checked={mode}
+						checked={theme}
 						onChange={() => {}}
 					/>
 					<label
 						className="mode__switch__slider"
 						htmlFor="mode__switch__check"
-						onClick={modeHandler}
+						onClick={themeHandler}
 					/>
 				</span>
 			</header>

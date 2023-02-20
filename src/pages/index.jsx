@@ -5,16 +5,7 @@ import Hero from '@/components/Hero'
 import Intro from '@/components/Intro'
 //import fetchProjects from '../libs/fetchProjects'
 
-export async function getServerSideProps() {
-	//const projects = await fetchProjects()
-	const projects = []
-
-	return {
-		props: {
-			projects,
-		},
-	}
-}
+const projects = []
 
 export default function Home({projects}) {
 	const Projects = dynamic(() => import('../components/Projects'))

@@ -36,7 +36,7 @@ jobs:
           node-version: "18"
           #cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Install pnpm
-        run: curl -f https://get.pnpm.io/v7.27.js | node - add --global pnpm@next-7
+        run: npm i -g pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Setup Pages

@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
 
-import fetchProjects from '../libs/fetchProjects'
+import Hero from '@/components/Hero'
+import Intro from '@/components/Intro'
+//import fetchProjects from '../libs/fetchProjects'
 
 export async function getServerSideProps() {
 	//const projects = await fetchProjects()
@@ -15,9 +15,6 @@ export async function getServerSideProps() {
 		},
 	}
 }
-
-import Hero from '../components/Hero'
-import Intro from '../components/Intro'
 
 export default function Home({projects}) {
 	const Projects = dynamic(() => import('../components/Projects'))

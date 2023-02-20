@@ -30,6 +30,7 @@ export default function Header() {
 					<input
 						type="checkbox"
 						name="mode__switch__check"
+						id="mode__switch__check"
 						className="mode__switch__check"
 						checked={theme}
 						onChange={() => {}}

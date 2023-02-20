@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 export default function Contact() {
-	//const { visitedAt } = useMain()
+	const { visitedAt } = useMain()
 	const [loading, setLoading] = useState(false)
 	const [submitStatus, setSubmitStatus] = useState(0)
 
@@ -13,29 +13,12 @@ export default function Contact() {
 		setLoading(true)
 
 		const {target} = e
-		const date = new Date()
 
-		const response = await fetch('https://formsubmit.co/c66f6befd22867ac809fdbc79f1745f5', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json'
-			},
-			body: JSON.stringify({
-				_captcha: 'false',
-				_template: 'table',
-				_subject: 'New submission sent at: ' + date.toString(),
-				fullname: target[2].value + ', ' + target[1].value,
-				email: target[3].value,
-				subject: target[4].value,
-				message: target[5].value,
-				language: window.navigator.language,
-			})
-		})
-		console.log(response)
+		const response = await fetchForm(target, visitedAt)
+		//console.log(response)
 
 		setTimeout(() => {
-			response.status === 200 ? setSubmitStatus(200) : setSubmitStatus(response.status)
+			response === 200 ? setSubmitStatus(200) : setSubmitStatus(response)
 			setLoading(false)
 		}, 1000)
 	}

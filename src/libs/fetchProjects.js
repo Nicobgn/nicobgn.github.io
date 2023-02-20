@@ -10,12 +10,7 @@ export default async function fetchProjects(){
 
 	const projects = rawProjects.map(({properties}) => {
 		const techs = properties.Techs.multi_select.map(tech => tech.name)
-		const images = properties.Images.files.map(image => {
-			return {
-				name: image.name || 'Not found',
-				url: image.file.url || '/default.png',
-			}
-		})
+		const images = properties.Images.files.map(image => image.file.url)
 
 		return {
 			name: properties.Name.title[0]?.plain_text || '',
@@ -24,12 +19,9 @@ export default async function fetchProjects(){
 			techs: techs || [],
 			source: properties.Source.url || '',
 			live: properties.Live.url || '',
-			images: images || {
-				name: 'Not Found',
-				url: '/default.png',
-			},
-		}
-	}) || []
+			images: images.length > 0 ? images : ['https://http.cat/404']
+	} || []
+	})
 
 	return projects
 }

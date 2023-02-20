@@ -10,26 +10,31 @@ main
 
   &.light
     .hero
-      background-image: url('/light-bg.png')
+      //background-image: url('/light-bg.png')
       text-shadow: 0 0 2px #cccc
   .hero 
-    background-image: url('/dark-bg.png')
     text-shadow: 0 0 4px #000
     @include defs.flexb($direction: column)
     min-height: 100vh
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: center
+
+    &__background img
+      z-index: -1
+      position: absolute
+      inset: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
 
     &__subtitle
       display: flex
       align-items: center
       
+      
       &--text
         display: inline-block
         overflow: hidden
         white-space: nowrap
-        animation: typewriter 6s ease-out 3s infinite
+        animation: typewriter 6s ease-out 1500ms infinite forwards
 
       &::before
         content: '>'
@@ -84,25 +89,29 @@ main
 
     &__container
       @include defs.flexb()
+
       height: 100%
 
       &--project
-        width: 200
-        height: 112
-        & > div
-          position: relative
-          width: 100%
-          height: 100%
+        width: 200px
+        height: 112px
+        position: relative
 
-          img
-            position: absolute
-            top: 0
-            left: 0
-            height: 100%
-            width: 100%
-          span
-            position: absolute
-            bottom: 5px
+        & img
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 100%
+        & span
+          display: none
+          position: absolute
+          bottom: 5px
+          left: 50%
+          transform: translateX(-50%)
+        
+        &:hover span
+          display: block
 
 @keyframes blink
   0%

@@ -1,4 +1,4 @@
-export default async function fetchForm(target) {
+export default async function fetchForm(target, visitedAt) {
 	const date = new Date()
 
 	const response = await fetch('https://formsubmit.co/83bb7506c7b164e34e6f12e6f10bf08a', {
@@ -16,11 +16,11 @@ export default async function fetchForm(target) {
 			email: target[3].value,
 			subject: target[4].value,
 			message: target[5].value,
-			//visitedAt,
+			visitedAt,
 			language: window.navigator.language,
 		}),
 	})
-	console.log(response)
+	//console.log(response)
 
 	return response.status
 }

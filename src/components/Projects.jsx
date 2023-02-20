@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export default function Projects () {
-	const [projects, setProjects] = useState([])
+	const [projects] = useState([])
 
 	/*async function fetchProjects(){
     const newProjects = await fetch("https://primrose-backend.vercel.app/api/notion/nico-projects").then(res => res.json()).then(projects=>projects['newProjects'])

@@ -4,10 +4,20 @@ import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Intro from '@/components/Intro'
 //import fetchProjects from '../libs/fetchProjects'
+//import { useEffect } from 'react'
 
-const projects = []
+/*export async function getServerSideProps () {
+	//const projects = await fetchProjects()
+	const projects = []
 
-export default function Home({projects}) {
+	return {
+		props: {
+			projects,
+		}
+	}
+}*/
+
+export default function Home() {
 	const Projects = dynamic(() => import('../components/Projects'))
 
   return (
@@ -26,7 +36,7 @@ export default function Home({projects}) {
 				<p>Here you can see a preview of my work.</p>
 
 				<div className="projects__container">
-					<Projects projects={projects}/>
+					<Projects/>
 				</div>
 			</section>
     </>

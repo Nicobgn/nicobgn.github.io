@@ -1,9 +1,30 @@
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
-export default function Projects (projects) {
+export default function Projects () {
+	const [projects, setProjects] = useState([])
+
+	async function fetchProjects(){
+    const newProjects = await fetch("https://primrose-backend.vercel.app/api/notion/nico-projects").then(res => res.json()).then(projects=>projects['newProjects'])
+		
+		setProjects(newProjects)
+
+		console.log(newProjects)
+    //if(!isShowing) setProjects(newProjects)
+
+    /*setTimeout(() => {
+      fetchProjects()
+    }, [])*/
+  }
+
+  useEffect(()=>{
+    fetchProjects()
+  },[])
+
 	//console.log(projects.projects)
-	return projects.projects.length > 0 
-		? projects.projects.map(({name, images}) => (
+
+	return projects.length > 0 
+		? projects?.map(({name, images}) => (
 			<div key={name} className="projects__container--project">
 				<Image
 					src={images[0]}

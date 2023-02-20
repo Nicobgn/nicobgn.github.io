@@ -9,12 +9,9 @@ export default function Projects () {
 		
 		setProjects(newProjects)
 
-		console.log(newProjects)
-    //if(!isShowing) setProjects(newProjects)
-
-    /*setTimeout(() => {
+    setTimeout(() => {
       fetchProjects()
-    }, [])*/
+    }, 5000)
   }
 
   useEffect(()=>{

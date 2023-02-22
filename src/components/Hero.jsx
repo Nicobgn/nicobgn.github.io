@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { useMain } from '@/contexts/MainContext'
 
 export default function Hero(){
-	const {theme} = useMain()
-
 	const phrases = [
 		'Passionate Learner',
 		'Efficiency  Fan',
@@ -22,12 +20,6 @@ export default function Hero(){
 
 	return (
 		<section className="hero">
-		{/*<div className="hero__background">
-				<img
-					src={theme === true ? '/light-bg.webp' : '/dark-bg.webp'}
-					alt='Background Image'
-				/>
-			</div> */}
 			<h1 className="hero__title">Backend & MySQL Developer.</h1>
 			<h2 className="hero__subtitle">
 				<span

@@ -22,12 +22,12 @@ export default function Hero(){
 
 	return (
 		<section className="hero">
-			<div className="hero__background">
+		{/*<div className="hero__background">
 				<img
 					src={theme === true ? '/light-bg.webp' : '/dark-bg.webp'}
 					alt='Background Image'
 				/>
-			</div>
+			</div> */}
 			<h1 className="hero__title">Backend & MySQL Developer.</h1>
 			<h2 className="hero__subtitle">
 				<span

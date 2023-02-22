@@ -1,9 +1,13 @@
-import { useMain } from '@/contexts/MainContext'
-import fetchForm from '@/libs/fetchForm'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
 import { useState } from 'react'
 
+import { useMain } from '@/contexts/MainContext'
+import fetchForm from '@/libs/fetchForm'
+
 export default function Contact() {
+	const router = useRouter()
 	const { visitedAt } = useMain()
 	const [loading, setLoading] = useState(false)
 	const [submitStatus, setSubmitStatus] = useState(0)
@@ -21,6 +25,8 @@ export default function Contact() {
 			response === 200 ? setSubmitStatus(200) : setSubmitStatus(response)
 			setLoading(false)
 		}, 1000)
+		
+		setTimeout(() => router.push('/thanks'), 1700)
 	}
 
 	return (

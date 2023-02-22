@@ -8,6 +8,12 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<Header/>
+			<div className='background'>
+				<img
+					src={theme === true ? '/light-bg.webp' : '/dark-bg.webp'}
+					alt='Background Image'
+				/>
+			</div>
 			<main className={theme ? 'light' : ''}>{children}</main>
 			<Footer />
 		</>

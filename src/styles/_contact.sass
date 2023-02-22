@@ -1,3 +1,6 @@
+.light > .contact_form input:not(.hidden)
+  backdrop-filter: brightness(0.9) blur(0px)
+
 .contact_form
   width: 95%
   height: 80%
@@ -34,18 +37,24 @@
     font-size: 18px
     color: var(--gen-clr)
 
-    border: 2px solid var(--primary)
+    border: 2px solid var(--quart)
     background: none
     border-radius: 5px
 
+    backdrop-filter: brightness(0.58) blur(4px)
+
+    &:hover
+      backdrop-filter: hue-rotate(340deg)
+
     &::placeholder
+      color: var(--gen-clr)
       font-family: 'Poppins', sans-serif
       text-transform: uppercase
 
   button
     cursor: pointer
     color: var(--gen-clr)
-    border: 1px solid var(--primary)
+    border: 2px solid var(--quart)
     padding: 10px 15px
     border-radius: 3rem
     height: 50px
@@ -120,6 +129,9 @@
     height: 0
     border: none
     background: none
+    backdrop-filter: none
+    pointer-events: none
+    color: none
 
 @keyframes loading
   0%

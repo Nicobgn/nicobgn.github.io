@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Nicobgn &bull; Backend Developer</title>
+        <title>Backend Developer &bull; Nicobgn</title>
         <meta 
 					name="description" 
 					content="Hello, I'm Nicolas Ignacio Barragan, a backend developer. My main languages are Nodejs (Express) and MySQL, but we can chat in English or Spanish." 

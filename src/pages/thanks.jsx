@@ -7,10 +7,10 @@ export default function Thanks() {
 	const router = useRouter()
 
 	function returnHome(){
-		setTimeout(()=> router.push('/'), 5000)
+		setTimeout(()=> router.push('/'), 5500)
 	}
-	
-	//useEffect(() => returnHome())
+
+	useEffect(() => returnHome())
 
 	return (
 		<>

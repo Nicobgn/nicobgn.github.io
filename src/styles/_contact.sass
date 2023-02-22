@@ -1,5 +1,9 @@
 .light > .contact_form input:not(.hidden)
   backdrop-filter: brightness(0.9) blur(0px)
+  &:hover,
+  &:focus,
+  &:active
+    backdrop-filter: hue-rotate(340deg)
 
 .contact_form
   width: 95%
@@ -43,7 +47,9 @@
 
     backdrop-filter: brightness(0.58) blur(4px)
 
-    &:hover
+    &:hover,
+    &:focus,
+    &:active
       backdrop-filter: hue-rotate(340deg)
 
     &::placeholder

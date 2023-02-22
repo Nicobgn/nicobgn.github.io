@@ -67,6 +67,10 @@ h5
 h6
   font-size: 0.8rem
 
+br::selection
+  pointer-events: none
+  background: none
+
 main
   min-height: 100vh
   width: 100vw
@@ -95,7 +99,7 @@ main
     background: var(--gen-bg)
     filter: opacity(0.8)
     //backdrop-filter: brightness(0.8)
-    text-shadow: 2px 0px var(--quart)
+    text-shadow: 2px 0px 0px var(--quart)
 
 ::-webkit-scrollbar
   background: transparent

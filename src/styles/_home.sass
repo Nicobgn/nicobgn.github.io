@@ -1,5 +1,8 @@
 @use 'defs'
 
+.light .projects
+  backdrop-filter: none
+
 main
   section
     padding: 10vh 1vw
@@ -77,6 +80,9 @@ main
 
   .projects
     min-height: 60vh
+    backdrop-filter: brightness(0.7)
+    & > *  
+      text-shadow: 4px 2px 10px var(--gen-bg)
 
     &__container
       @include defs.flexb()

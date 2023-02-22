@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { useMain } from '@/contexts/MainContext'
 
 export default function Hero(){
 	const phrases = [

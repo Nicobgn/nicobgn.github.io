@@ -4,6 +4,7 @@ const phrases: string[] = [
   'Bienvenido al Portfolio',
   'Gracias por pasarte',
   'Me especializo en Tauri',
+  'Soy Estudiante de Programación en la UNAHur',
 ];
 
 export const Hero = () => {

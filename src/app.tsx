@@ -1,5 +1,8 @@
+import Home from "./pages/Home";
+import { Layout } from "./pages/Layout";
+
 export const App = () => {
   return (
-    <main></main>
+    <Layout><Home/></Layout>
   )
 };

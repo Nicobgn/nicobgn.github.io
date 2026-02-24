@@ -1,5 +1,5 @@
 import type { AnchorHTMLAttributes, FunctionalComponent } from "preact";
-import { cx } from "../libs/core";
+import { cx } from "../../libs/core";
 
 type Link = Omit<AnchorHTMLAttributes, 'href'> & {
   href: string;

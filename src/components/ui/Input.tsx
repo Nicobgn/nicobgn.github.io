@@ -1,6 +1,6 @@
 import type { FunctionalComponent, InputHTMLAttributes } from "preact";
 import Field from "./Field";
-import { cx } from "../libs/core";
+import { cx } from "../../libs/core";
 
 type InputProps = Omit<InputHTMLAttributes, 'id' | 'name'> & {
   id?: string;
@@ -17,8 +17,10 @@ const Input: FunctionalComponent<InputProps> = ({
   id = id ?? name;
 
   const classes = cx(
-    'px-2 py-1',
+    'px-2 py-2 rounded-md',
     'peer',
+    'md:w-64',
+    'bg-neutral-900',
     cs as string, cn as string,
   );
 

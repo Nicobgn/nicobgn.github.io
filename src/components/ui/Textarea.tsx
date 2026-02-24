@@ -1,6 +1,6 @@
 import type { FunctionalComponent, TextareaHTMLAttributes } from "preact";
 import Field from "./Field";
-import { cx } from "../libs/core";
+import { cx } from "../../libs/core";
 
 type TextareaProps = Omit<TextareaHTMLAttributes, 'id' | 'name'> & {
   id?: string;
@@ -17,8 +17,9 @@ const Textarea: FunctionalComponent<TextareaProps> = ({
   id = id ?? name;
 
   const classes = cx(
-    'px-2 py-1',
+    'px-2 py-2',
     'peer',
+    'bg-neutral-900',
     cs as string, cn as string,
   );
 

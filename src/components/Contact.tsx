@@ -1,7 +1,8 @@
 import { useState } from "preact/hooks";
-import Input from "./Input";
-import Textarea from "./Textarea";
+import Input from "./ui/Input";
+import Textarea from "./ui/Textarea";
 import type { InputEventHandler } from "preact";
+import { cx } from "../libs/core";
 
 type Form = {
   name: string;
@@ -43,8 +44,14 @@ const Contact = () => {
     console.log(formState);
   };
 
+  const sectionClasses = cx(
+    'flex flex-col',
+    'justify-center items-center gap-4',
+    'px-32 py-32',
+  );
+
   return (
-    <section>
+    <section id={'contact'} class={sectionClasses}>
       <h3>Vamos a ponernos en contacto:</h3>
       <form onSubmit={handleSubmit}>
         <Input
@@ -63,6 +70,8 @@ const Contact = () => {
           label="Mensaje" name="message"
           onChange={handleTextareaChange}
         />
+        
+        <button type={'submit'}>Enviar</button>
       </form>
     </section>
   );

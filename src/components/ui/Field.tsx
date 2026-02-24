@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from "preact";
-import { cx } from "../libs/core";
+import { cx } from "../../libs/core";
 
 type FieldProps = {
   label: string;
@@ -12,14 +12,18 @@ const Field: FunctionalComponent<FieldProps> = ({
   id,
 }) => {
   const fieldClasses = cx(
-    'relative'
+    'relative',
+    'mb-4',
   );
 
   const labelClasses = cx(
-    'absolute',
-    'top-1 left-2',
+    'absolute rounded',
+    'duration-300 transition-all',
+    'top-2 left-2',
     'peer-focus:-top-3 peer-not-placeholder-shown:-top-3',
-    'duration-300 transition-all'
+    'peer-focus:bg-neutral-900 peer-not-placeholder-shown:bg-neutral-900',
+    'peer-focus:px-1 peer-not-placeholder-shown:px-1',
+    'peer-focus:left-1 peer-not-placeholder-shown:left-1',
   );
 
   return (

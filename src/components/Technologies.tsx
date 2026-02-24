@@ -19,10 +19,11 @@ const Technologies = () => {
   const sectionClasses = cx(
     'flex flex-col md:flex-row',
     'justify-around items-center',
+    'p-32',
   );
   
   return (
-    <section class={sectionClasses}>
+    <section id={'technologies'} class={sectionClasses}>
       <div>
         <h3>Mi Stack de Tecnologías (defendibles) es:</h3>
         <ul>

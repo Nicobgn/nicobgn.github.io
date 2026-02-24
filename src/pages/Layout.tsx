@@ -1,6 +1,6 @@
 import type { FunctionalComponent } from "preact";
 import { cx } from "../libs/core";
-import { Link } from "../components/Link";
+import { Link } from "../components/ui/Link";
 
 export const Layout: FunctionalComponent = ({ children }) => {
   const layoutClasses = cx(

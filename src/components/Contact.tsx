@@ -40,6 +40,12 @@ const Contact = () => {
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
 
+    const { name, email, subject } = formState;
+
+    if (!name || !email || !subject) {
+      console.error('Los campos del formulario no son válidos');
+    }
+
     console.log('======= Prueba de Envío ========')
     console.log(formState);
   };
@@ -47,15 +53,27 @@ const Contact = () => {
   const sectionClasses = cx(
     'flex flex-col',
     'justify-center items-center gap-4',
-    'px-32 py-32',
+    'py-32 px-42',
+  );
+
+  const buttonClasses = cx(
+    'px-4 py-3',
+    'bg-blue-900 hover:bg-blue-700 focus:bg-blue-700',
+    'rounded-md hover:ring',
+    // 'hover:font-bold'
+  );
+
+  const formClasses = cx(
+    'px-8 py-6 rounded-md',
+    'bg-zinc-900/30',
   );
 
   return (
     <section id={'contact'} class={sectionClasses}>
       <h3>Vamos a ponernos en contacto:</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} class={formClasses}>
         <Input
-          label="Nombre" name="nombre"
+          label="Nombre" name="name"
           onChange={handleInputChange}
         />
         <Input
@@ -71,7 +89,12 @@ const Contact = () => {
           onChange={handleTextareaChange}
         />
         
-        <button type={'submit'}>Enviar</button>
+        <button
+          type={'submit'}
+          class={buttonClasses}
+        >
+          Enviar
+        </button>
       </form>
     </section>
   );

@@ -17,7 +17,8 @@ const Textarea: FunctionalComponent<TextareaProps> = ({
   id = id ?? name;
 
   const classes = cx(
-    'px-2 py-2',
+    'px-2 py-2 rounded-md',
+    'md:w-64',
     'peer',
     'bg-neutral-900',
     cs as string, cn as string,

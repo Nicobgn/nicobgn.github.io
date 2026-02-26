@@ -1,8 +1,12 @@
 import type { FunctionalComponent } from "preact";
 import { cx } from "../libs/core";
 import { Link } from "../components/ui/Link";
+import { useLang } from "../hooks/useLang";
+import { MESSAGES } from "../libs/i18n";
 
 export const Layout: FunctionalComponent = ({ children }) => {
+  const { lang, toggle } = useLang();
+  
   const layoutClasses = cx(
     'flex flex-col md:flex-row',
     'bg-neutral-950 text-neutral-50',
@@ -19,9 +23,28 @@ export const Layout: FunctionalComponent = ({ children }) => {
     'overflow-y-auto',
   );
 
+  const langClasses = cx(
+    'px-3 py-2 text-sm w-12',
+    'rounded border',
+    'absolute right-8 top-2',
+    'hover:bg-slate-700/80 focus:bg-slate-700/80',
+  );
+
+  const msg = MESSAGES[lang].layout;
+
   return (
     <div class={layoutClasses}>
       <aside></aside>
+      <button
+        type="button"
+        class={langClasses}
+        onClick={toggle}
+        aria-label={`${msg.langLabel}: ${lang === "en" ? "English" : "Español"}`}
+        title={msg.langLabel}
+        tabIndex={-1}
+      >
+        {lang === "en" ? "EN" : "ES"}
+      </button>
       <div class={mainLayoutClasses}>
         <header class='hidden md:flex justify-center items-center'>
           <ul role={'navigation'}>

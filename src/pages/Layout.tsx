@@ -11,7 +11,8 @@ export const Layout: FunctionalComponent = ({ children }) => {
     'flex flex-col md:flex-row',
     // 'bg-neutral-950',
     'text-neutral-50',
-    'h-dvh'
+    'h-dvh',
+    'bg-linear-to-br from-gray-800 to-gray-950'
   );
 
   const mainLayoutClasses = cx(

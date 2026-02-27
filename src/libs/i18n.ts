@@ -88,13 +88,13 @@ export const MESSAGES = {
           title: "Database Modeling (ERD)",
           status: "In progress",
           description:
-            "Entity–relationship modeling for a data-driven system, prioritizing normalization, constraints, and maintainability.",
+            "Entity-relationship modeling for a data-driven system, prioritizing normalization, constraints, and maintainability.",
           highlights: [
             "Relational modeling & normalization",
             "Integrity constraints and schema design",
             "PostgreSQL-focused approach",
           ],
-          stack: ["PostgreSQL"],
+          stack: ["PostgreSQL", 'Tauri', 'TypeScript', 'Preact', 'Rust', 'Actix-web'],
         },
         {
           title: "Mock Info App (Prototype)",
@@ -106,7 +106,7 @@ export const MESSAGES = {
             "Data presentation structure",
             "Prepared for incremental implementation",
           ],
-          stack: ["TypeScript", "Preact"],
+          stack: ["TypeScript", "Preact", 'Tauri', 'Rust'],
         },
         {
           title: "Cards Store E-commerce (Academic - Team)",
@@ -118,7 +118,7 @@ export const MESSAGES = {
             "Backend-first approach",
             "Containerized development workflow",
           ],
-          stack: ["TypeScript", "PostgreSQL", "Podman"],
+          stack: ["JavaScript", "PostgreSQL"],
         },
       ],
     },
@@ -229,7 +229,7 @@ export const MESSAGES = {
             "Constraints e integridad referencial",
             "Enfoque orientado a PostgreSQL",
           ],
-          stack: ["PostgreSQL"],
+          stack: ["PostgreSQL", 'Tauri', 'TypeScript', 'Preact', 'Actix-web'],
         },
         {
           title: "App de Información (Mockup)",

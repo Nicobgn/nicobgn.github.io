@@ -69,7 +69,7 @@ const Contact = () => {
   );
 
   return (
-    <section id={'contact'} class={sectionClasses}>
+    <section id={'contacto'} class={sectionClasses}>
       <h3>Vamos a ponernos en contacto:</h3>
       <form onSubmit={handleSubmit} class={formClasses}>
         <Input

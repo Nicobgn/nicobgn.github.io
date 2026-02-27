@@ -9,7 +9,8 @@ export const Layout: FunctionalComponent = ({ children }) => {
   
   const layoutClasses = cx(
     'flex flex-col md:flex-row',
-    'bg-neutral-950 text-neutral-50',
+    // 'bg-neutral-950',
+    'text-neutral-50',
     'h-dvh'
   );
 
@@ -59,6 +60,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
             <Link href="https://nicobgn.github.io">Nicolás Barragán</Link>
           </p>
         </footer>
+        <div class={'absolute top-0 left-0 w-dvw h-dvh bg-linear-to-br from-gray-800 to-gray-950 -z-50'}/>
       </div>
     </div>
   )

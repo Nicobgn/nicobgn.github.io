@@ -22,7 +22,12 @@ export const Hero = () => {
     return () => clearInterval(id);
   }, [phrases.length]);
 
-  const sectionClasses = cx("min-h-dvh md:min-h-200");
+  const sectionClasses = cx(
+    "min-h-dvh",
+    "flex items-center justify-center",
+    "px-4 py-8",
+    // "bg-gradient-to-br from-gray-800 to-gray-950",
+  );
 
   const msg = MESSAGES[lang].hero;
 

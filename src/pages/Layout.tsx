@@ -28,6 +28,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
     'px-3 py-2 text-sm w-12',
     'rounded border',
     'absolute right-8 top-2',
+    'bg-gray-900',
     'hover:bg-neutral-950 z-50',
     'hover:bg-slate-700/80 focus:bg-slate-700/80',
   );

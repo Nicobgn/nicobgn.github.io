@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "preact/hooks";
 import { cx } from "../libs/core";
 import { MESSAGES } from "../libs/i18n";
-import { useLang } from "../hooks/useLang";
+import { useLang } from "../contexts/lang";
 
 export const Hero = () => {
   const { lang } = useLang();

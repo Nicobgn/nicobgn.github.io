@@ -3,6 +3,8 @@ import Input from "./ui/Input";
 import Textarea from "./ui/Textarea";
 import type { InputEventHandler } from "preact";
 import { cx } from "../libs/core";
+import { useLang } from "../contexts/lang";
+import { MESSAGES } from "../libs/i18n";
 
 type Form = {
   name: string;
@@ -18,6 +20,8 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+
+  const { lang } = useLang();
 
   const handleInputChange: InputEventHandler<HTMLInputElement> = (e) => {
     const { name, value } = e.currentTarget;
@@ -68,24 +72,28 @@ const Contact = () => {
     'bg-zinc-900/30',
   );
 
+  const msg = MESSAGES[lang].contact;
+
   return (
     <section id={'contacto'} class={sectionClasses}>
-      <h3>Vamos a ponernos en contacto:</h3>
+      <h3 class={'text-2xl font-bold'}>{msg.title}</h3>
+      <p class={'opacity-80 max-w-2xl'}>{msg.subtitle}</p>
+      
       <form onSubmit={handleSubmit} class={formClasses}>
         <Input
-          label="Nombre" name="name"
+          label={msg.form.name} name="name"
           onChange={handleInputChange}
         />
         <Input
-          label="Correo Electrónico" name="email" type="email"
+          label={msg.form.email} name="email" type="email"
           onChange={handleInputChange}
         />
         <Input
-          label="Propuesta" name="subject"
+          label={msg.form.subject} name="subject"
           onChange={handleInputChange}
         />
         <Textarea
-          label="Mensaje" name="message"
+          label={msg.form.message} name="message"
           onChange={handleTextareaChange}
         />
         
@@ -93,7 +101,7 @@ const Contact = () => {
           type={'submit'}
           class={buttonClasses}
         >
-          Enviar
+          {msg.form.send}
         </button>
       </form>
     </section>

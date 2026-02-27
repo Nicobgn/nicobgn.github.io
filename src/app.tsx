@@ -1,8 +1,13 @@
+import { LangProvider } from "./contexts/lang";
 import Home from "./pages/Home";
 import { Layout } from "./pages/Layout";
 
 export const App = () => {
   return (
-    <Layout><Home/></Layout>
+    <LangProvider>
+      <Layout>
+        <Home />
+      </Layout>
+    </LangProvider>
   )
 };

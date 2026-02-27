@@ -1,8 +1,8 @@
 import type { FunctionalComponent } from "preact";
 import { cx } from "../libs/core";
 import { Link } from "../components/ui/Link";
-import { useLang } from "../hooks/useLang";
 import { MESSAGES } from "../libs/i18n";
+import { useLang } from "../contexts/lang";
 
 export const Layout: FunctionalComponent = ({ children }) => {
   const { lang, toggle } = useLang();

@@ -1,6 +1,5 @@
-export type Lang = "en" | "es";
+import type { Lang } from "../contexts/lang";
 
-export const DEFAULT_LANG: Lang = "en";
 
 export const MESSAGES = {
   en: {
@@ -73,52 +72,61 @@ export const MESSAGES = {
       },
       items: [
         {
-          title: "Ollama Chat Client",
+          title: "Local LLM Chat Client",
           status: "Private / In progress",
           description:
-            "A cross-platform chat client to interact with locally running LLMs via Ollama, focused on a clean UX and extensible integrations.",
+            "Cross-platform client for orchestrating local LLM inference through an extensible architecture focused on session persistence and provider abstraction.",
           highlights: [
-            "API integration with local inference runtime",
-            "Conversation/session management",
-            "Cross-platform app architecture",
+            "Local inference orchestration layer",
+            "Conversational state persistence",
+            "Provider-based extensible architecture",
+            "Context & session management",
+            "Cross-platform desktop integration"
           ],
           stack: ["Rust", "Tauri", "TypeScript", "Preact"],
         },
         {
-          title: "Database Modeling (ERD)",
+          title: "ERP System (Relational Inventory & Invoicing)",
           status: "In progress",
           description:
-            "Entity-relationship modeling for a data-driven system, prioritizing normalization, constraints, and maintainability.",
+            "Design and implementation of an ERP focused on real-time inventory consistency, capable of modeling product dependencies through BOM structures and propagating transactional stock updates across multiple warehouses.",
           highlights: [
-            "Relational modeling & normalization",
-            "Integrity constraints and schema design",
-            "PostgreSQL-focused approach",
+            "SKU dependency graph for derived stock",
+            "Inventory decomposition via BOM",
+            "Transactional updates for bundles & composite products",
+            "Multi-warehouse stock consistency",
+            "Physical inventory localization",
+            "Relational model optimized for state propagation"
           ],
-          stack: ["PostgreSQL", 'Tauri', 'TypeScript', 'Preact', 'Rust', 'Actix-web'],
+          stack: ["PostgreSQL", "Tauri", "TypeScript", "Preact", "Rust", "Actix-web"],
         },
         {
-          title: "Mock Info App (Prototype)",
+          title: "Modular E-commerce WebApp",
+          status: "Under restructuring",
+          description:
+            "Full-stack e-commerce platform built with a backend-first architecture emphasizing domain separation and reproducible containerized deployments.",
+          highlights: [
+            "Domain-driven modular architecture",
+            "Relational API focused on transactional integrity",
+            "Containerized development workflow",
+            "Application/data layer separation",
+            "Horizontally scalable foundation"
+          ],
+          stack: ["TypeScript", "PostgreSQL", "NodeJS", "Express"],
+        },
+        {
+          title: "Synthetic Data Generation Pipeline",
           status: "Prototype",
           description:
-            "A mock application to explore information architecture, UI flows, and data representation for future implementation.",
+            "Synthetic identity generation pipeline for testing environments integrating unique identifier derivation, credential hashing and symmetric encryption for reversible data.",
           highlights: [
-            "UX flow exploration",
-            "Data presentation structure",
-            "Prepared for incremental implementation",
+            "Deterministic ID generation (nanoid)",
+            "Credential hashing with Argon2",
+            "AES-GCM encryption for reversible fields",
+            "Seeded generation with faker.js",
+            "Testing environment ready datasets"
           ],
-          stack: ["TypeScript", "Preact", 'Tauri', 'Rust'],
-        },
-        {
-          title: "Cards Store E-commerce (Academic - Team)",
-          status: "Private / Academic",
-          description:
-            "Team project: a fictional e-commerce platform for a trading cards store, built with modular structure and containerized services.",
-          highlights: [
-            "Collaboration and modular design",
-            "Backend-first approach",
-            "Containerized development workflow",
-          ],
-          stack: ["JavaScript", "PostgreSQL"],
+          stack: ["TypeScript", 'Preact', 'Tauri'],
         },
       ],
     },
@@ -208,52 +216,61 @@ export const MESSAGES = {
       },
       items: [
         {
-          title: "Cliente de Chat para Ollama",
-          status: "Privado / En progreso",
+          title: "Cliente de Chat para LLMs Locales",
+          status: "Privado / En desarrollo",
           description:
-            "Cliente multiplataforma para interactuar con LLMs locales vía Ollama, con foco en UX limpia e integraciones extensibles.",
+            "Cliente multiplataforma para orquestar inferencia local de LLMs mediante una arquitectura extensible orientada a persistencia de sesiones y desacople entre proveedores de inferencia.",
           highlights: [
-            "Integración con API de inferencia local",
-            "Gestión de conversaciones/sesiones",
-            "Arquitectura de app multiplataforma",
+            "Capa de orquestación para inferencia local",
+            "Persistencia de estado conversacional",
+            "Arquitectura extensible basada en proveedores",
+            "Gestión de contexto y sesiones",
+            "Integración desktop multiplataforma"
           ],
           stack: ["Rust", "Tauri", "TypeScript", "Preact"],
         },
         {
-          title: "Modelado de Base de Datos (ERD)",
-          status: "En progreso",
+          title: "Sistema ERP (Facturación e Inventario Relacional)",
+          status: "En desarrollo",
           description:
-            "Modelado entidad-relación para un sistema basado en datos, priorizando normalización, constraints y mantenibilidad.",
+            "Diseño e implementación de un ERP orientado a consistencia de inventario en tiempo real, capaz de modelar dependencias entre productos mediante estructuras BOM y propagar actualizaciones de stock en forma transaccional a través de múltiples almacenes.",
           highlights: [
-            "Modelado relacional y normalización",
-            "Constraints e integridad referencial",
-            "Enfoque orientado a PostgreSQL",
+            "Grafo de dependencias entre SKUs para stock derivado",
+            "Descomposición de inventario vía BOM (recipes)",
+            "Actualización transaccional de combos y productos compuestos",
+            "Consistencia de stock multi-almacén",
+            "Localización física de inventario",
+            "Modelo relacional optimizado para propagación de estado"
           ],
-          stack: ["PostgreSQL", 'Tauri', 'TypeScript', 'Preact', 'Actix-web'],
+          stack: ["PostgreSQL", "Tauri", "TypeScript", "Preact", "Rust", "Actix-web"],
         },
         {
-          title: "App de Información (Mockup)",
+          title: "WebApp E-commerce Modular",
+          status: "En reestructuración",
+          description:
+            "Aplicación e-commerce full-stack con arquitectura backend-first orientada a separación de dominios y despliegue reproducible mediante contenedores.",
+          highlights: [
+            "Arquitectura modular basada en dominios",
+            "API relacional orientada a integridad transaccional",
+            "Workflow de desarrollo contenedorizado",
+            "Separación de capas aplicación/datos",
+            "Preparada para escalabilidad horizontal"
+          ],
+          stack: ["TypeScript", "PostgreSQL", "NodeJS", "Express"],
+        },
+        {
+          title: "Sistema de Generación de Datos Sintéticos",
           status: "Prototipo",
           description:
-            "Aplicación mock para explorar arquitectura de información, flujos de UI y representación de datos para una futura implementación.",
+            "Pipeline de generación de identidades sintéticas para testing que integra derivación de identificadores únicos, hashing criptográfico de credenciales y cifrado simétrico para datos reversibles.",
           highlights: [
-            "Exploración de flujos UX",
-            "Estructura de presentación de datos",
-            "Preparada para implementación incremental",
+            "Generación determinística de IDs (nanoid)",
+            "Hashing de credenciales con Argon2",
+            "Cifrado AES-GCM para datos reversibles",
+            "Seeded data generation con faker.js",
+            "Preparado para entornos de testing"
           ],
-          stack: ["TypeScript", "Preact"],
-        },
-        {
-          title: "E-commerce de Tienda de Cartas (Académico - Equipo)",
-          status: "Privado / Académico",
-          description:
-            "Proyecto en equipo: plataforma e-commerce ficticia para una tienda de cartas, con estructura modular y workflow con contenedores.",
-          highlights: [
-            "Trabajo colaborativo y diseño modular",
-            "Enfoque backend-first",
-            "Entorno de desarrollo contenedorizado",
-          ],
-          stack: ["TypeScript", "PostgreSQL", "Podman"],
+          stack: ["TypeScript", 'Preact', 'Tauri'],
         },
       ],
     },

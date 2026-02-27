@@ -1,6 +1,6 @@
+import { useLang } from "../contexts/lang";
 import { cx } from "../libs/core";
 import { MESSAGES } from "../libs/i18n";
-import { useLang } from "../hooks/useLang";
 
 const Projects = () => {
   const { lang } = useLang();

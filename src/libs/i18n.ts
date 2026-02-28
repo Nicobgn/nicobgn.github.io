@@ -330,11 +330,3 @@ export const MESSAGES = {
     },
   },
 } as const;
-
-export function t<L extends Lang, K1 extends keyof typeof MESSAGES[L], K2 extends keyof typeof MESSAGES[L][K1]>(
-  lang: L,
-  k1: K1,
-  k2: K2
-) {
-  return MESSAGES[lang][k1][k2];
-}

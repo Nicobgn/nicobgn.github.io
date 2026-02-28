@@ -153,6 +153,15 @@ export const MESSAGES = {
         invalidEmail: "Please enter a valid email address.",
         successHint: "If your email client didn't open, you can copy the message and send it manually.",
       },
+      feedback: {
+        success: "Message sent! Thanks for reaching out.",
+        error: "There was an error sending your message. Please try again later.",
+        validation: {
+          required: "Please complete all fields",
+          tooFast: "It looks like you're sending messages too quickly. Please wait a moment before trying again.",
+          honeypot: "There was an issue with the form submission. Please try again.",
+        }
+      },
       privacyNote: "Messages sent through this form are delivered via the third-party service FormSubmit (formsubmit.co). Please avoid including sensitive information.",
       deliveryNote: 'Some messages may be filtered as spam. If you don\'t receive a reply within a few days, feel free to try again or reach out via LinkedIn or GitHub.',
     },
@@ -306,6 +315,15 @@ export const MESSAGES = {
         required: "Completá nombre, correo y asunto.",
         invalidEmail: "Ingresá un correo válido.",
         successHint: "Si no se abrió tu cliente de correo, podés copiar el mensaje y enviarlo manualmente.",
+      },
+      feedback: {
+        success: "¡Mensaje enviado! Gracias por contactarme.",
+        error: "Hubo un error al enviar tu mensaje. Por favor, intentá nuevamente más tarde.",
+        validation: {
+          required: "Por favor completa todos los campos",
+          tooFast: "Parece que estás enviando mensajes muy rápido. Por favor, espera un momento antes de intentar de nuevo.",
+          honeypot: "Hubo un error con el formulario. Por favor, intentá nuevamente.",
+        }
       },
       privacyNote: "Los mensajes enviados a través de este formulario se entregan mediante el servicio externo FormSubmit (formsubmit.co). Por favor, evitá incluir información sensible.",
       deliveryNote: "Algunos mensajes pueden ser filtrados como spam. Si no recibís respuesta en unos días, podés intentar nuevamente o contactarme por LinkedIn o GitHub.",

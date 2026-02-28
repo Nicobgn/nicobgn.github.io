@@ -47,7 +47,7 @@ const Contact = () => {
       setIsLoading,
       setForm,
       mountedAt,
-    });
+    }, msg.feedback);
   };
 
   const sectionClasses = cx(

@@ -11,6 +11,10 @@ type FormFeedback = {
   message: string;
 };
 
+type Messages = {
+  [key: string]: string | { [key: string]: string } | any;
+};
+
 type FormHandlers = {
   setFeedback: (feedback: FormFeedback | null) => void;
   setIsLoading: (isLoading: boolean) => void;
@@ -21,6 +25,7 @@ type FormHandlers = {
 export const fetchForm = async (
   form: ContactForm,
   handlers: FormHandlers,
+  msg: Messages,
 ) => {
   const { name, email, subject, message } = form;
   const { setFeedback, setIsLoading, setForm, mountedAt } = handlers;
@@ -30,19 +35,23 @@ export const fetchForm = async (
   if (ellapsed < 3000) {
     setFeedback({
       type: 'error',
-      message: 'Por favor espera un momento antes de enviar el formulario'
+      message: msg.validation.tooFast,
     });
     return;
   }
 
   if (form._honeypot) {
+    setFeedback({
+      type: 'error',
+      message: msg.validation.honeypot,
+    })
     return;
   }
 
   if (!name || !email || !subject || !message) {
     setFeedback({
       type: 'error',
-      message: 'Por favor completa todos los campos'
+      message: msg.validation.required,
     });
     return;
   }
@@ -58,16 +67,16 @@ export const fetchForm = async (
     formData.append('message', message);
     // formData.append('_captcha', 'false');
     formData.append('_template', 'table');
-    formData.append('_honey', form._honeypot || '');
+    form._honeypot && formData.append('_honey', form._honeypot);
     formData.append('_subject', `Nuevo mensaje de ${name}: ${subject}`);
     formData.append('_replyto', email);
     formData.append('_captcha', 'false');
 
     const formHeaders = new Headers();
     formHeaders.append('Accept', 'application/json');
-    formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
+    // formHeaders.append('Content-Type', 'application/json');
 
-    console.log(formData)
+    console.log(Object.fromEntries(formData));
 
     const response = await fetch('https://formsubmit.co/83bb7506c7b164e34e6f12e6f10bf08a', {
       method: 'POST',
@@ -80,7 +89,7 @@ export const fetchForm = async (
     if (response.ok) {
       setFeedback({
         type: 'success',
-        message: '¡Mensaje enviado correctamente! Te responderé pronto.'
+        message: msg.success,
       });
       setForm({
         name: '',
@@ -94,7 +103,7 @@ export const fetchForm = async (
   } catch (error) {
     setFeedback({
       type: 'error',
-      message: 'Hubo un error al enviar el mensaje. Intenta de nuevo.'
+      message: msg.error,
     });
     console.error('Error:', error);
   } finally {

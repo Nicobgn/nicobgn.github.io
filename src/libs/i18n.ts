@@ -81,7 +81,7 @@ export const MESSAGES = {
       items: [
         {
           title: "Local LLM Chat Client",
-          status: "Private / In progress",
+          status: "Private",
           description:
             "Cross-platform client for orchestrating local LLM inference through an extensible architecture focused on session persistence and provider abstraction.",
           highlights: [
@@ -124,7 +124,7 @@ export const MESSAGES = {
         },
         {
           title: "Synthetic Data Generation Pipeline",
-          status: "Prototype",
+          status: "Private / Prototype",
           description:
             "Synthetic identity generation pipeline for testing environments integrating unique identifier derivation, credential hashing and symmetric encryption for reversible data.",
           highlights: [
@@ -235,7 +235,7 @@ export const MESSAGES = {
       items: [
         {
           title: "Cliente de Chat para LLMs Locales",
-          status: "Privado / En desarrollo",
+          status: "Privado",
           description:
             "Cliente multiplataforma para orquestar inferencia local de LLMs mediante una arquitectura extensible orientada a persistencia de sesiones y desacople entre proveedores de inferencia.",
           highlights: [
@@ -278,7 +278,7 @@ export const MESSAGES = {
         },
         {
           title: "Sistema de Generación de Datos Sintéticos",
-          status: "Prototipo",
+          status: "Privado / Prototipo",
           description:
             "Pipeline de generación de identidades sintéticas para testing que integra derivación de identificadores únicos, hashing criptográfico de credenciales y cifrado simétrico para datos reversibles.",
           highlights: [

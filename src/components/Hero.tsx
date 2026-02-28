@@ -25,7 +25,7 @@ export const Hero = () => {
   const sectionClasses = cx(
     "min-h-dvh",
     "flex items-center justify-center",
-    "px-4 py-8",
+    "px-4 md:px-12 py-8",
     // "bg-gradient-to-br from-gray-800 to-gray-950",
   );
 

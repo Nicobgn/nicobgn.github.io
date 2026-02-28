@@ -57,14 +57,15 @@ const Contact = () => {
   const sectionClasses = cx(
     'flex flex-col',
     'justify-center items-center gap-4',
-    'py-32 px-42',
+    'py-24 px-6 md:px-12',
   );
 
   const buttonClasses = cx(
     'px-4 py-3',
     'bg-blue-900 hover:bg-blue-700 focus:bg-blue-700',
     'rounded-md hover:ring',
-    // 'hover:font-bold'
+    // 'hover:font-bold',
+    // 'mx-auto',
   );
 
   const formClasses = cx(

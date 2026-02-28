@@ -5,6 +5,13 @@ export const MESSAGES = {
   en: {
     layout: {
       langLabel: "Language",
+      toggleNav: 'Toggle navigation sidebar',
+      nav: {
+        hero: 'Profile',
+        technologies: 'Technologies',
+        projects: 'Projects',
+        contact: 'Contact',
+      }
     },
 
     hero: {
@@ -64,7 +71,7 @@ export const MESSAGES = {
     projects: {
       title: "Projects",
       subtitle:
-        "Selected work and case studies. Some projects are private or currently being rebuilt.",
+        "Selected work and case studies.",
       note: "Some projects are in progress or private. Demos and code walkthroughs available on request.",
       cta: {
         requestDemo: "Request a private demo",
@@ -150,6 +157,13 @@ export const MESSAGES = {
   es: {
     layout: {
       langLabel: "Idioma",
+      toggleNav: 'Alternar barra de navegación',
+      nav: {
+        hero: 'Perfil',
+        technologies: 'Tecnologías',
+        projects: 'Proyectos',
+        contact: 'Contacto',
+      }
     },
 
     hero: {
@@ -208,7 +222,7 @@ export const MESSAGES = {
     projects: {
       title: "Proyectos",
       subtitle:
-        "Trabajos seleccionados y mini case studies. Algunos proyectos son privados o están en reconstrucción.",
+        "Trabajos seleccionados y mini case studies.",
       note: "Algunos proyectos se encuentran en desarrollo o son privados. Puedo mostrar demos o explicar la arquitectura a pedido.",
       cta: {
         requestDemo: "Pedir demo privada",

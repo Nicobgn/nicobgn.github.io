@@ -63,7 +63,6 @@ export const Layout: FunctionalComponent = ({ children }) => {
             <Link href="https://nicobgn.github.io">Nicolás Barragán</Link>
           </p>
         </footer>
-        {/* <div class={'absolute top-0 left-0 w-dvw h-dvh bg-linear-to-br from-gray-800 to-gray-950 -z-50'}/> */}
       </div>
     </div>
   )

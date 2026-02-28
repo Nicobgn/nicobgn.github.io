@@ -19,12 +19,14 @@ export const Layout: FunctionalComponent = ({ children }) => {
   );
 
   const mainLayoutClasses = cx(
-    isSidebarOpen ? 'hidden md:flex' : 'flex flex-1',
-    'flex-col',
+    isSidebarOpen ? 'hidden md:flex' : 'flex',
+    'flex-col flex-1',
     'h-dvh',
     'min-h-0',
     'md:flex-1',
     'bg-linear-to-br from-gray-800 to-gray-950',
+    'transition-all duration-300 ease-in-out',
+    'transition-discrete',
   );
 
   const mainClasses = cx(

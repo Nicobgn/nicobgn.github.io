@@ -15,6 +15,7 @@ const Sidebar = ({ lang, isOpen, toggle }: SidebaProps) => {
     'bg-linear-to-bl from-gray-800 to-gray-950',
     'md:flex flex-col',
     'md:w-36',
+    'transition-all duration-300 ease-in-out',
     isOpen
       ? 'h-full flex-1 md:flex-none py-12'
       : 'h-0 md:h-auto',
@@ -43,10 +44,10 @@ const Sidebar = ({ lang, isOpen, toggle }: SidebaProps) => {
       </button>
       <aside class={classes}>
         <ul role={'navigation'} class={'flex flex-1 flex-col justify-center gap-4 items-left px-8 py-4'}>
-          <li><NavLink href="#hero">{msg.nav.hero}</NavLink></li>
-          <li><NavLink href="#tecnologias">{msg.nav.technologies}</NavLink></li>
-          <li><NavLink href="#proyectos">{msg.nav.projects}</NavLink></li>
-          <li><NavLink href="#contacto">{msg.nav.contact}</NavLink></li>
+          <li onClick={toggle}><NavLink href="#hero">{msg.nav.hero}</NavLink></li>
+          <li onClick={toggle}><NavLink href="#tecnologias">{msg.nav.technologies}</NavLink></li>
+          <li onClick={toggle}><NavLink href="#proyectos">{msg.nav.projects}</NavLink></li>
+          <li onClick={toggle}><NavLink href="#contacto">{msg.nav.contact}</NavLink></li>
         </ul>
       </aside>
     </>

@@ -4,12 +4,14 @@ import { cx } from "../../libs/core";
 type FieldProps = {
   label: string;
   id: string;
+  hint?: string;
+  error?: string;
 };
 
 const Field: FunctionalComponent<FieldProps> = ({
   children,
-  label,
-  id,
+  label, id,
+  hint, error,
 }) => {
   const fieldClasses = cx(
     'relative',
@@ -35,6 +37,12 @@ const Field: FunctionalComponent<FieldProps> = ({
         class={labelClasses}
       >
         {label}
+        {hint && (
+          <span class={"block text-xs opacity-80"}>{hint}</span>
+        )}
+        {error && (
+          <span class={"block text-xs text-red-500"}>{error}</span>
+        )}
       </label>
     </div>
   )

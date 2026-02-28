@@ -24,7 +24,7 @@ const Sidebar = ({ lang, isOpen, toggle }: SidebaProps) => {
     <>
       <button
         type="button"
-        class="absolute md:hidden top-2 left-4 md:left-8 w-10 h-10 bg-gray-800 rounded-md flex items-center justify-center"
+        class="fixed md:hidden top-2 left-4 md:left-8 w-10 h-10 bg-gray-800 rounded-md flex items-center justify-center"
         aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         onClick={toggle}
       >

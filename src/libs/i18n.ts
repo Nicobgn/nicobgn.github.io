@@ -1,6 +1,3 @@
-import type { Lang } from "../contexts/lang";
-
-
 export const MESSAGES = {
   en: {
     layout: {

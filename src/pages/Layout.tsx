@@ -12,12 +12,13 @@ export const Layout: FunctionalComponent = ({ children }) => {
     // 'bg-neutral-950',
     'text-neutral-50',
     'h-dvh',
-    // 'bg-linear-to-br from-gray-800 to-gray-950'
+    // 'bg-linear-to-br from-gray-800 to-gray-950',
   );
 
   const mainLayoutClasses = cx(
     'flex-1 md:h-dvh',
     'flex flex-col',
+    'bg-linear-to-br from-gray-800 to-gray-950',
   );
 
   const mainClasses = cx(
@@ -38,7 +39,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
 
   return (
     <div class={layoutClasses}>
-      <aside></aside>
+      {/* <aside></aside> */}
       <button
         type="button"
         class={langClasses}

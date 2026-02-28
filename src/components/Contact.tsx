@@ -69,7 +69,7 @@ const Contact = () => {
 
   const formClasses = cx(
     'px-8 py-6 rounded-md',
-    'bg-zinc-900/30',
+    'bg-linear-to-br from-slate-900/30 to-zinc-900/10',
   );
 
   const msg = MESSAGES[lang].contact;

@@ -20,7 +20,7 @@ const Textarea: FunctionalComponent<TextareaProps> = ({
     'px-2 py-2 rounded-md',
     'md:w-64',
     'peer',
-    'bg-neutral-900',
+    'bg-gray-950/50',
     cs as string, cn as string,
   );
 

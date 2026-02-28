@@ -20,7 +20,7 @@ const Input: FunctionalComponent<InputProps> = ({
     'px-2 py-2 rounded-md',
     'peer',
     'md:w-64',
-    'bg-neutral-900',
+    'bg-gray-950/50',
     cs as string, cn as string,
   );
 

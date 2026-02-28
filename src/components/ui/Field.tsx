@@ -21,7 +21,7 @@ const Field: FunctionalComponent<FieldProps> = ({
     'duration-300 transition-all',
     'top-2 left-2',
     'peer-focus:-top-3 peer-not-placeholder-shown:-top-3',
-    'peer-focus:bg-neutral-900 peer-not-placeholder-shown:bg-neutral-900',
+    'peer-focus:bg-gray-950/90 peer-not-placeholder-shown:bg-gray-950/90',
     'peer-focus:px-1 peer-not-placeholder-shown:px-1',
     'peer-focus:left-1 peer-not-placeholder-shown:left-1',
     'peer-focus:text-sm peer-not-placeholder-shown:text-sm',

@@ -57,7 +57,7 @@ export const MESSAGES = {
           "Containerization with Podman",
           "GitOps principles",
           "Linux (basic sysadmin)",
-          "Kubernetes (learning)",
+          // "Kubernetes (learning)",
         ],
       },
       extra: {
@@ -220,7 +220,7 @@ export const MESSAGES = {
           "Contenedorización con Podman",
           "Principios de GitOps",
           "Linux (sysadmin básico)",
-          "Kubernetes (en aprendizaje)",
+          // "Kubernetes (en aprendizaje)",
         ],
       },
       extra: {

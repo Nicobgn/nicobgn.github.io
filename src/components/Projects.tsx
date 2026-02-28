@@ -9,7 +9,7 @@ const Projects = () => {
   const sectionClasses = cx("py-24 px-6 md:px-12", "flex flex-col gap-6");
   const gridClasses = cx("grid gap-6", "md:grid-cols-2");
   const cardClasses = cx("rounded border p-5", "flex flex-col gap-3");
-  const chipsWrap = cx("flex flex-wrap gap-2");
+  const chipsWrap = cx("flex flex-wrap gap-2", 'mt-auto self-end');
   const chip = cx("text-xs px-2 py-1 rounded border opacity-90");
   const ul = cx("list-disc pl-5 flex flex-col gap-1 opacity-90");
 

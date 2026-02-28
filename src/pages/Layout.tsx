@@ -12,7 +12,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
     // 'bg-neutral-950',
     'text-neutral-50',
     'h-dvh',
-    'bg-linear-to-br from-gray-800 to-gray-950'
+    // 'bg-linear-to-br from-gray-800 to-gray-950'
   );
 
   const mainLayoutClasses = cx(
@@ -21,7 +21,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
   );
 
   const mainClasses = cx(
-    'flex flex-col flex-1',
+    'flex-1',
     'overflow-y-auto',
   );
 
@@ -62,7 +62,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
             <Link href="https://nicobgn.github.io">Nicolás Barragán</Link>
           </p>
         </footer>
-        <div class={'absolute top-0 left-0 w-dvw h-dvh bg-linear-to-br from-gray-800 to-gray-950 -z-50'}/>
+        {/* <div class={'absolute top-0 left-0 w-dvw h-dvh bg-linear-to-br from-gray-800 to-gray-950 -z-50'}/> */}
       </div>
     </div>
   )

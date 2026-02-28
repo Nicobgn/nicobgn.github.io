@@ -58,8 +58,9 @@ const Contact = () => {
     'px-4 py-3',
     'bg-blue-900 hover:bg-blue-700 focus:bg-blue-700',
     'rounded-md hover:ring',
-    // 'hover:font-bold',
-    // 'mx-auto',
+    'block mx-auto',
+    'disabled:bg-gray-700 disabled:text-gray-400 disabled:hover:bg-gray-700/80 disabled:focus:bg-gray-700/80',
+    feedback ? 'mt-2' : 'mt-6',
   );
 
   const formClasses = cx(
@@ -109,6 +110,7 @@ const Contact = () => {
         {feedback && (
           <div class={cx(
             'mt-4 p-3 rounded-md text-sm',
+            'max-w-64',
             feedback.type === 'success'
               ? 'bg-green-900/30 text-green-200'
               : 'bg-red-900/30 text-red-200'

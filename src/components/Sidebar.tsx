@@ -23,7 +23,7 @@ const Sidebar = ({ lang, isOpen, toggle }: SidebaProps) => {
   const buttonClasses = cx(
     'px-3 py-2 text-sm w-12',
     'rounded-md border',
-    'fixed left-4 md:left-8 top-2',
+    'fixed md:hidden left-4 md:left-8 top-2',
     'bg-gray-800',
     'text-center',
     'hover:bg-gray-700 focus:bg-gray-700',

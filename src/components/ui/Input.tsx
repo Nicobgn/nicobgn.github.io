@@ -19,7 +19,7 @@ const Input: FunctionalComponent<InputProps> = ({
   const classes = cx(
     'px-2 py-2 rounded-md',
     'peer',
-    'md:w-64',
+    'w-full min-w-64 md:min-w-96',
     'bg-gray-950/50',
     cs as string, cn as string,
   );

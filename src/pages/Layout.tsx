@@ -15,22 +15,23 @@ export const Layout: FunctionalComponent = ({ children }) => {
     'flex flex-col md:flex-row',
     'text-neutral-50',
     'h-dvh',
+    'min-h-0',
   );
 
   const mainLayoutClasses = cx(
-    isSidebarOpen ? 'flex-shrink max-h-0': 'flex-1',
+    isSidebarOpen ? 'hidden md:flex' : 'flex flex-1',
+    'flex-col',
+    'h-dvh',
     'min-h-0',
-    'md:flex-1 md:h-dvh md:max-h-dvh',
-    'flex flex-col',
+    'md:flex-1',
     'bg-linear-to-br from-gray-800 to-gray-950',
   );
 
   const mainClasses = cx(
     'flex-1',
+    'min-h-0',
     'overflow-y-auto',
     'scroll-smooth',
-    'h-full',
-    // 'scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900',
     'scrollbar-dark',
   );
 

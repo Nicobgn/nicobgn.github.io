@@ -65,7 +65,9 @@ export const fetchForm = async (
 
     const formHeaders = new Headers();
     formHeaders.append('Accept', 'application/json');
-    formHeaders.append('Content-Type', 'application/json');
+    formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    console.log(formData)
 
     const response = await fetch('https://formsubmit.co/83bb7506c7b164e34e6f12e6f10bf08a', {
       method: 'POST',

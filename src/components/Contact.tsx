@@ -8,6 +8,7 @@ import { MESSAGES } from "../libs/i18n";
 import { fetchForm, type ContactForm } from "../libs/form";
 
 const Contact = () => {
+  const [mountedAt] = useState(Date.now());
   const [formState, setForm] = useState<ContactForm>({
     name: '',
     email: '',
@@ -45,6 +46,7 @@ const Contact = () => {
       setFeedback,
       setIsLoading,
       setForm,
+      mountedAt,
     });
   };
 
@@ -76,27 +78,39 @@ const Contact = () => {
       <p class={'opacity-80 max-w-2xl'}>{msg.subtitle}</p>
       
       <form onSubmit={handleSubmit} class={formClasses}>
-        <input type="hidden" name={'_honeypot'} value={formState._honeypot} />
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete={'off'}
+          class={'absolute left-[-999999px] opacity-0 pointer-events-none'}
+          name={'_honeypot'}
+          value={formState._honeypot}
+          onChange={handleInputChange}
+        />
 
         <Input
           label={msg.form.name} name="name"
           onChange={handleInputChange}
           value={formState.name}
+          required
         />
         <Input
           label={msg.form.email} name="email" type="email"
           onChange={handleInputChange}
           value={formState.email}
+          required
         />
         <Input
           label={msg.form.subject} name="subject"
           onChange={handleInputChange}
           value={formState.subject}
+          required
         />
         <Textarea
           label={msg.form.message} name="message"
           onChange={handleTextareaChange}
           value={formState.message}
+          required
         />
         
         <button
@@ -108,15 +122,15 @@ const Contact = () => {
         </button>
 
         {feedback && (
-          <div class={cx(
+          <p class={cx(
             'mt-4 p-3 rounded-md text-sm',
-            'max-w-64',
+            'max-w-64 md:max-w-96 mx-auto text-center',
             feedback.type === 'success'
               ? 'bg-green-900/30 text-green-200'
               : 'bg-red-900/30 text-red-200'
           )}>
             {feedback.message}
-          </div>
+          </p>
         )}
       </form>
       

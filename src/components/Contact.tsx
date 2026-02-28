@@ -5,21 +5,18 @@ import type { InputEventHandler } from "preact";
 import { cx } from "../libs/core";
 import { useLang } from "../contexts/lang";
 import { MESSAGES } from "../libs/i18n";
-
-type Form = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import { fetchForm, type ContactForm } from "../libs/form";
 
 const Contact = () => {
-  const [formState, setForm] = useState<Form>({
+  const [formState, setForm] = useState<ContactForm>({
     name: '',
     email: '',
     subject: '',
     message: '',
   });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [feedback, setFeedback] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
   const { lang } = useLang();
 
@@ -41,17 +38,14 @@ const Contact = () => {
     }))
   };
 
-  const handleSubmit = (e: SubmitEvent) => {
+  const handleSubmit = async (e: SubmitEvent) => {
     e.preventDefault();
 
-    const { name, email, subject } = formState;
-
-    if (!name || !email || !subject) {
-      console.error('Los campos del formulario no son válidos');
-    }
-
-    console.log('======= Prueba de Envío ========')
-    console.log(formState);
+    await fetchForm(formState, {
+      setFeedback,
+      setIsLoading,
+      setForm,
+    });
   };
 
   const sectionClasses = cx(
@@ -81,30 +75,55 @@ const Contact = () => {
       <p class={'opacity-80 max-w-2xl'}>{msg.subtitle}</p>
       
       <form onSubmit={handleSubmit} class={formClasses}>
+        <input type="hidden" name={'_honeypot'} value={formState._honeypot} />
+
         <Input
           label={msg.form.name} name="name"
           onChange={handleInputChange}
+          value={formState.name}
         />
         <Input
           label={msg.form.email} name="email" type="email"
           onChange={handleInputChange}
+          value={formState.email}
         />
         <Input
           label={msg.form.subject} name="subject"
           onChange={handleInputChange}
+          value={formState.subject}
         />
         <Textarea
           label={msg.form.message} name="message"
           onChange={handleTextareaChange}
+          value={formState.message}
         />
         
         <button
           type={'submit'}
           class={buttonClasses}
+          disabled={isLoading}
         >
-          {msg.form.send}
+          {isLoading ? msg.form.sending : msg.form.send}
         </button>
+
+        {feedback && (
+          <div class={cx(
+            'mt-4 p-3 rounded-md text-sm',
+            feedback.type === 'success'
+              ? 'bg-green-900/30 text-green-200'
+              : 'bg-red-900/30 text-red-200'
+          )}>
+            {feedback.message}
+          </div>
+        )}
       </form>
+      
+      <p class={'text-xs opacity-70 max-w-md text-center mt-4'}>
+        {msg.privacyNote}
+      </p>
+      <p class={'text-xs opacity-70 max-w-md text-center'}>
+        {msg.deliveryNote}
+      </p>
     </section>
   );
 };

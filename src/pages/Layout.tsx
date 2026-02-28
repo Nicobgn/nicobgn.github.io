@@ -19,6 +19,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
 
   const mainLayoutClasses = cx(
     isSidebarOpen ? 'flex-shrink max-h-0': 'flex-1',
+    'min-h-0',
     'md:flex-1 md:h-dvh md:max-h-dvh',
     'flex flex-col',
     'bg-linear-to-br from-gray-800 to-gray-950',
@@ -28,6 +29,7 @@ export const Layout: FunctionalComponent = ({ children }) => {
     'flex-1',
     'overflow-y-auto',
     'scroll-smooth',
+    'h-full',
     // 'scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900',
     'scrollbar-dark',
   );
@@ -61,17 +63,9 @@ export const Layout: FunctionalComponent = ({ children }) => {
         {lang === "en" ? "EN" : "ES"}
       </button>
       <div class={mainLayoutClasses}>
-        <header class='hidden md:flex justify-center items-center'>
-          {/* <ul role={'navigation'} class={'flex flex-1 justify-center gap-8 items-center px-8 py-4'}>
-            <NavLink href="#hero">{msg.nav.hero}</NavLink>
-            <NavLink href="#tecnologias">{msg.nav.technologies}</NavLink>
-            <NavLink href="#proyectos">{msg.nav.projects}</NavLink>
-            <NavLink href="#contacto">{msg.nav.contact}</NavLink>
-          </ul> */}
-        </header>
         <main class={mainClasses}>{children}</main>
         <footer class={'px-4 py-2'}>
-          <p>
+          <p class={'text-sm opacity-70 text-center'}>
             &copy; 2026 -{' '}
             <Link href="https://github.com/Nicobgn">Nicolás Barragán</Link>
           </p>

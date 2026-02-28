@@ -20,13 +20,24 @@ const Sidebar = ({ lang, isOpen, toggle }: SidebaProps) => {
       : 'h-0 md:h-auto',
   );
 
+  const buttonClasses = cx(
+    'px-3 py-2 text-sm w-12',
+    'rounded-md border',
+    'fixed left-4 md:left-8 top-2',
+    'bg-gray-800',
+    'text-center',
+    'hover:bg-gray-700 focus:bg-gray-700',
+    'z-50',
+  );
+
   return (
     <>
       <button
         type="button"
-        class="fixed md:hidden top-2 left-4 md:left-8 w-10 h-10 bg-gray-800 rounded-md flex items-center justify-center"
-        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        class={buttonClasses}
+        aria-label={isOpen ? msg.closeNav : msg.openNav}
         onClick={toggle}
+        tabIndex={-1}
       >
         {isOpen ? 'X' : 'O'}
       </button>

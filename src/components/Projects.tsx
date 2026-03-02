@@ -1,6 +1,7 @@
 import { useLang } from "../contexts/lang";
 import { cx } from "../libs/core";
 import { MESSAGES } from "../libs/i18n";
+import { Link } from "./ui/Link";
 
 const Projects = () => {
   const { lang } = useLang();
@@ -37,12 +38,41 @@ const Projects = () => {
               ))}
             </ul>
 
-            <div class={chipsWrap}>
-              {p.stack.map((s, idx) => (
-                <span key={`${p.title}-s-${idx}`} class={chip}>
-                  {s}
-                </span>
-              ))}
+            <div class={'flex justify-between items-center'}>
+              {
+                "links" in p && p.links && (
+                <ul>
+                  { p.links.windows && (
+                    <li>
+                      <Link href={p.links.windows.href}>{p.links.windows.label}</Link>
+                    </li>
+                  ) }
+                  { p.links.deb && (
+                    <li>
+                      <Link href={p.links.deb.href}>{p.links.deb.label}</Link>
+                    </li>
+                  ) }
+                  { p.links.repo && (
+                    <li>
+                      <Link
+                        href={p.links.repo.href}
+                        target={'_blank'}
+                      >
+                        {p.links.repo.label}
+                      </Link>
+                    </li>
+                  ) }
+                </ul>
+              )
+              }
+              
+              <div class={chipsWrap}>
+                {p.stack.map((s, idx) => (
+                  <span key={`${p.title}-s-${idx}`} class={chip}>
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
           </article>
         ))}

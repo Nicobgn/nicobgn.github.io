@@ -148,6 +148,20 @@ export const MESSAGES = {
             "Incremental build system with TypeScript + Vite (~2s dev, ~5s prod)"
           ],
           stack: ["TypeScript", "Preact", "Tauri", "Rust", "Tailwind CSS", "Stronghold"],
+          links: {
+            windows: {
+              href: '/Todo.App_1.1.2_x64-setup.exe',
+              label: 'Download for Windows',
+            },
+            deb: {
+              href: '/Todo.App_1.1.2_amd64.deb',
+              label: 'Download for Linux',
+            },
+            repo: {
+              href: 'https://github.com/Nicobgn/todo-app',
+              label: 'Repository (Private)'
+            }
+          },
         }
       ],
     },
@@ -313,8 +327,8 @@ export const MESSAGES = {
           stack: ["TypeScript", 'Preact', 'Tauri'],
         },
         {
-          title: "Aplicación de Tareas Tipo-Segura",
-          status: "Código Abierto / Showcase",
+          title: "Aplicación de Tareas Type-Safe",
+          status: "Privado / Showcase",
           description:
             "Aplicación de escritorio full-stack con arquitectura segura que integra encriptación end-to-end mediante Stronghold, autenticación multinivel, componentes accesibles (WCAG) y un pipeline de construcción optimizado con Vite. Demuestra patrones de estado avanzados con Context API y comunicación IPC TypeScript-safe entre frontend Preact y backend Rust.",
           highlights: [
@@ -327,6 +341,20 @@ export const MESSAGES = {
             "Build system incremental con TypeScript + Vite (~2s dev, ~5s prod)"
           ],
           stack: ["TypeScript", "Preact", "Tauri", "Rust", "Tailwind CSS", "Stronghold"],
+          links: {
+            windows: {
+              href: '/Todo.App_1.1.2_x64-setup.exe',
+              label: 'Descarga para Windows',
+            },
+            deb: {
+              href: '/Todo.App_1.1.2_amd64.deb',
+              label: 'Descarga para Linux',
+            },
+            repo: {
+              href: 'https://github.com/Nicobgn/todo-app',
+              label: 'Repositorio (Privado)'
+            }
+          },
         }
       ],
     },

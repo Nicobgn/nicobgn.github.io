@@ -133,6 +133,22 @@ export const MESSAGES = {
           ],
           stack: ["TypeScript", 'Preact', 'Tauri'],
         },
+        {
+          title: "Type-Safe Task Management Application",
+          status: "Open Source / Showcase",
+          description:
+            "Full-stack desktop application with enterprise-grade security architecture integrating end-to-end encryption via Stronghold, multi-layer authentication, WCAG-compliant accessible components, and optimized build pipeline with Vite. Demonstrates advanced state patterns using Context API and type-safe IPC communication between Preact frontend and Rust backend.",
+          highlights: [
+            "End-to-end encryption with Stronghold (IOTA protocol)",
+            "Type-safe IPC between Preact and Tauri",
+            "Multi-layer Context API for scalable state management",
+            "Accessible components with ARIA labels & full keyboard navigation",
+            "Preact with HMR (3KB bundle vs 42KB React)",
+            "Internationalization (i18n) with multi-language support",
+            "Incremental build system with TypeScript + Vite (~2s dev, ~5s prod)"
+          ],
+          stack: ["TypeScript", "Preact", "Tauri", "Rust", "Tailwind CSS", "Stronghold"],
+        }
       ],
     },
 
@@ -296,6 +312,22 @@ export const MESSAGES = {
           ],
           stack: ["TypeScript", 'Preact', 'Tauri'],
         },
+        {
+          title: "Aplicación de Tareas Tipo-Segura",
+          status: "Código Abierto / Showcase",
+          description:
+            "Aplicación de escritorio full-stack con arquitectura segura que integra encriptación end-to-end mediante Stronghold, autenticación multinivel, componentes accesibles (WCAG) y un pipeline de construcción optimizado con Vite. Demuestra patrones de estado avanzados con Context API y comunicación IPC TypeScript-safe entre frontend Preact y backend Rust.",
+          highlights: [
+            "Encriptación end-to-end con Stronghold (protocolo IOTA)",
+            "Type-safe IPC entre Preact y Tauri",
+            "Context API multi-capa para state management escalable",
+            "Componentes accesibles con ARIA labels & keyboard navigation",
+            "Preact con HMR (3KB bundle vs 42KB de React)",
+            "Internacionalización (i18n) con soporte multiidioma",
+            "Build system incremental con TypeScript + Vite (~2s dev, ~5s prod)"
+          ],
+          stack: ["TypeScript", "Preact", "Tauri", "Rust", "Tailwind CSS", "Stronghold"],
+        }
       ],
     },
 

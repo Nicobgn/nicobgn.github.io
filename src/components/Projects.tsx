@@ -38,7 +38,7 @@ const Projects = () => {
               ))}
             </ul>
 
-            <div class={'flex justify-between items-center'}>
+            <div class={'flex justify-between items-center mt-auto'}>
               {
                 "links" in p && p.links && (
                 <ul>

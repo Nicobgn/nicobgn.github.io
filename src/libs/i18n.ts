@@ -268,7 +268,7 @@ export const MESSAGES = {
       items: [
         {
           title: "Advenire – Backend Financiero y Logístico Internacional",
-          status: "Privado",
+          status: "Private",
           description:
             "Motor backend distribuido diseñado para procesar flujos de logística internacional, operaciones multimoneda y regulaciones impositivas complejas bajo transacciones tolerantes a fallos.",
           highlights: [

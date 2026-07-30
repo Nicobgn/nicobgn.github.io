@@ -14,17 +14,17 @@ export const MESSAGES = {
 
     hero: {
       name: "Nicolás Barragán",
-      tagline: "Backend & Systems-oriented Fullstack Developer",
+      tagline: "Backend & Systems-oriented Software Engineer",
       phrases: [
-        "Building systems with Rust and TypeScript",
-        "Microservices-first architecture mindset",
-        "Containerizing workloads with Podman",
-        "Cross-platform apps with Tauri",
-        "PostgreSQL for reliable data modeling",
-        // "Learning Kubernetes for orchestration",
+        "Building high-reliability backends with Rust",
+        "Event-driven architectures with Apache Kafka",
+        "Distributed transactions via Saga Pattern",
+        "Cross-platform desktop apps with Tauri",
+        "PostgreSQL & SQLCipher for reliable data modeling",
+        "Containerized zero-downtime CI/CD pipelines",
       ],
-      p1: "Computer Science and Cybersecurity undergraduate. I build full-stack solutions with a strong backend focus: APIs, data modeling, and scalable services.",
-      p2: "Comfortable with DevOps/GitOps practices, containers, and Linux fundamentals. Currently deepening Kubernetes and distributed systems skills.",
+      p1: "Computer Science and Cybersecurity undergraduate specializing in high-reliability backends, transactional APIs, and distributed systems. Focused on data correctness, fault tolerance, and clean architecture.",
+      p2: "Proven experience building event-driven systems (Saga Pattern, Kafka), designing optimized relational schemas (PostgreSQL, SQLCipher), and deploying containerized services with Docker and Podman.",
       ctas: {
         projects: "View projects",
         contact: "Contact me",
@@ -36,33 +36,33 @@ export const MESSAGES = {
       title: "Tech stack",
       languages: {
         title: "Languages",
-        items: ["Rust", "TypeScript", "JavaScript"],
+        items: ["Rust", "TypeScript", "JavaScript", "SQL"],
       },
       backend: {
-        title: "Backend",
+        title: "Backend & Systems",
         items: [
-          "REST API design & development",
-          "Microservices architecture",
-          "Data modeling",
-          "PostgreSQL",
+          "Actix-web & Node.js / Express",
+          "Apache Kafka & Saga Pattern",
+          "REST APIs & Microservices",
+          "Distributed Transactions & Idempotency",
         ],
       },
       frontend: {
-        title: "Frontend",
-        items: ["Preact", "React", "HTML5", "CSS3"],
+        title: "Frontend & Desktop",
+        items: ["React", "Preact", "Tauri", "HTML5 & CSS3"],
       },
       infra: {
-        title: "DevOps / Infrastructure",
+        title: "DevOps & Infrastructure",
         items: [
-          "Containerization with Podman",
-          "GitOps principles",
-          "Linux (basic sysadmin)",
-          // "Kubernetes (learning)",
+          "Containerization with Docker & Podman",
+          "GitHub Actions (CI/CD pipelines)",
+          "Nginx & Linux Sysadmin (VPS)",
+          "PostgreSQL, MySQL & Valkey/Redis",
         ],
       },
       extra: {
         title: "Tools & Extras",
-        items: ["Git", "GitHub", "Postman", "Tauri (desktop & mobile apps)"],
+        items: ["Git & GitHub", "Postman", "Encrypted SQLite (SQLCipher)", "Documentation-First Dev"],
       },
     },
 
@@ -76,6 +76,32 @@ export const MESSAGES = {
         contact: "Contact",
       },
       items: [
+        {
+          title: "Advenire – International Logistics & Financial Backend",
+          status: "Private",
+          description:
+            "Distributed backend engine designed to process international logistics workflows, multi-currency operations, and complex tax calculations with fault-tolerant transactions.",
+          highlights: [
+            "Event-driven microservice coordination using Apache Kafka",
+            "Long-running transaction management via Saga Pattern",
+            "Strict idempotency and recovery logic preventing data inconsistencies",
+            "High-throughput REST APIs and ACID-compliant PostgreSQL data modeling"
+          ],
+          stack: ["Rust", "Actix-web", "Apache Kafka", "PostgreSQL", "Docker", "Saga Pattern"],
+        },
+        {
+          title: "Grovu – Secure Business Management Platform",
+          status: "In progress",
+          description:
+            "Cross-platform desktop application for SMBs integrating appointment scheduling, financial tracking, and encrypted local storage with a cloud-ready migration path.",
+          highlights: [
+            "Low-resource consumption using Tauri, Rust, and React/Preact",
+            "Encrypted local data persistence powered by SQLite and SQLCipher",
+            "Decoupled architecture built for seamless local-to-cloud migration",
+            "Modular Actix-web backend design applying Clean Architecture"
+          ],
+          stack: ["Rust", "Tauri", "React", "Actix-web", "SQLCipher", "SQLite"],
+        },
         {
           title: "Local LLM Chat Client",
           status: "Private",
@@ -91,39 +117,10 @@ export const MESSAGES = {
           stack: ["Rust", "Tauri", "TypeScript", "Preact"],
         },
         {
-          title: "ERP System (Relational Inventory & Invoicing)",
-          status: "In progress",
-          description:
-            "Design and implementation of an ERP focused on real-time inventory consistency, capable of modeling product dependencies through BOM structures and propagating transactional stock updates across multiple warehouses.",
-          highlights: [
-            "SKU dependency graph for derived stock",
-            "Inventory decomposition via BOM",
-            "Transactional updates for bundles & composite products",
-            "Multi-warehouse stock consistency",
-            "Physical inventory localization",
-            "Relational model optimized for state propagation"
-          ],
-          stack: ["PostgreSQL", "Tauri", "TypeScript", "Preact", "Rust", "Actix-web"],
-        },
-        {
-          title: "Modular E-commerce WebApp",
-          status: "Under restructuring",
-          description:
-            "Full-stack e-commerce platform built with a backend-first architecture emphasizing domain separation and reproducible containerized deployments.",
-          highlights: [
-            "Domain-driven modular architecture",
-            "Relational API focused on transactional integrity",
-            "Containerized development workflow",
-            "Application/data layer separation",
-            "Horizontally scalable foundation"
-          ],
-          stack: ["TypeScript", "PostgreSQL", "NodeJS", "Express"],
-        },
-        {
           title: "Synthetic Data Generation Pipeline",
           status: "Private / Prototype",
           description:
-            "Synthetic identity generation pipeline for testing environments integrating unique identifier derivation, credential hashing and symmetric encryption for reversible data.",
+            "Synthetic identity generation pipeline for testing environments integrating unique identifier derivation, cryptographic credential hashing (Argon2), and AES-GCM encryption.",
           highlights: [
             "Deterministic ID generation (nanoid)",
             "Credential hashing with Argon2",
@@ -131,10 +128,10 @@ export const MESSAGES = {
             "Seeded generation with faker.js",
             "Testing environment ready datasets"
           ],
-          stack: ["TypeScript", 'Preact', 'Tauri'],
+          stack: ["TypeScript", "Preact", "Tauri", "Rust"],
         },
         {
-          title: "Type-Safe Task Management Application",
+          title: "Type-Safe Secure Task Management Application",
           status: "Open Source / Showcase",
           description:
             "Full-stack desktop application with enterprise-grade security architecture integrating end-to-end encryption via Stronghold, multi-layer authentication, WCAG-compliant accessible components, and optimized build pipeline with Vite. Demonstrates advanced state patterns using Context API and type-safe IPC communication between Preact frontend and Rust backend.",
@@ -208,17 +205,17 @@ export const MESSAGES = {
 
     hero: {
       name: "Nicolás Barragán",
-      tagline: "Desarrollador Fullstack orientado a Backend y Sistemas",
+      tagline: "Desarrollador Software orientado a Backend y Sistemas",
       phrases: [
-        "Construyo sistemas con Rust y TypeScript",
-        "Mentalidad de arquitectura en microservicios",
-        "Contenedorizo servicios con Podman",
-        "Apps multiplataforma con Tauri",
-        "Modelado de datos con PostgreSQL",
-        // "Aprendiendo Kubernetes para orquestación",
+        "Construyo backend de alta confiabilidad con Rust",
+        "Arquitecturas orientadas a eventos con Apache Kafka",
+        "Transacciones distribuidas con Saga Pattern",
+        "Apps de escritorio multiplataforma con Tauri",
+        "Modelado con PostgreSQL y SQLCipher",
+        "Pipelines CI/CD y despliegues en contenedores",
       ],
-      p1: "Estudiante de Lic. en Informática y Lic. en Ciberseguridad. Desarrollo soluciones full-stack con fuerte foco backend: APIs, modelado de datos y servicios escalables.",
-      p2: "Con conocimientos en prácticas DevOps/GitOps, contenedores y fundamentos de Linux. Actualmente profundizando Kubernetes y sistemas distribuidos.",
+      p1: "Estudiante de Lic. en Informática y Lic. en Ciberseguridad. Desarrollo soluciones backend de alta confiabilidad con fuerte foco en APIs transaccionales, modelado de datos y sistemas distribuidos.",
+      p2: "Con experiencia comprobada en sistemas orientados a eventos (Saga Pattern, Kafka), esquemas relacionales optimizados (PostgreSQL, SQLCipher) y despliegue de servicios contenedorizados con Docker y Podman.",
       ctas: {
         projects: "Ver proyectos",
         contact: "Contactarme",
@@ -229,33 +226,33 @@ export const MESSAGES = {
       title: "Tecnologías",
       languages: {
         title: "Lenguajes",
-        items: ["Rust", "TypeScript", "JavaScript"],
+        items: ["Rust", "TypeScript", "JavaScript", "SQL"],
       },
       backend: {
-        title: "Backend",
+        title: "Backend y Sistemas",
         items: [
+          "Actix-web & Node.js / Express",
+          "Apache Kafka & Saga Pattern",
           "Diseño y desarrollo de APIs REST",
-          "Arquitectura basada en microservicios",
-          "Modelado de datos",
-          "PostgreSQL",
+          "Transacciones distribuidas e Idempotencia",
         ],
       },
       frontend: {
-        title: "Frontend",
-        items: ["Preact", "React", "HTML5", "CSS3"],
+        title: "Frontend y Desktop",
+        items: ["React", "Preact", "Tauri", "HTML5 & CSS3"],
       },
       infra: {
-        title: "DevOps / Infraestructura",
+        title: "DevOps e Infraestructura",
         items: [
-          "Contenedorización con Podman",
-          "Principios de GitOps",
-          "Linux (sysadmin básico)",
-          // "Kubernetes (en aprendizaje)",
+          "Contenedorización con Docker & Podman",
+          "GitHub Actions (Pipelines CI/CD)",
+          "Nginx & Administración Linux (VPS)",
+          "PostgreSQL, MySQL & Valkey/Redis",
         ],
       },
       extra: {
         title: "Herramientas y extras",
-        items: ["Git", "GitHub", "Postman", "Tauri (apps desktop y mobile)"],
+        items: ["Git & GitHub", "Postman", "SQLite cifrado (SQLCipher)", "Desarrollo orientado a documentación"],
       },
     },
 
@@ -269,6 +266,32 @@ export const MESSAGES = {
         contact: "Contacto",
       },
       items: [
+        {
+          title: "Advenire – Backend Financiero y Logístico Internacional",
+          status: "Privado",
+          description:
+            "Motor backend distribuido diseñado para procesar flujos de logística internacional, operaciones multimoneda y regulaciones impositivas complejas bajo transacciones tolerantes a fallos.",
+          highlights: [
+            "Coordinación asíncrona de microservicios usando Apache Kafka",
+            "Gestión de transacciones de larga duración mediante Saga Pattern",
+            "Lógica estricta de idempotencia para prevenir inconsistencias de datos",
+            "APIs REST de alto rendimiento y modelado PostgreSQL con cumplimiento ACID"
+          ],
+          stack: ["Rust", "Actix-web", "Apache Kafka", "PostgreSQL", "Docker", "Saga Pattern"],
+        },
+        {
+          title: "Grovu – Plataforma de Gestión Empresarial Segura",
+          status: "En desarrollo",
+          description:
+            "Aplicación de escritorio multiplataforma para PyMEs que integra agenda, control financiero y almacenamiento local cifrado con ruta de migración a la nube.",
+          highlights: [
+            "Bajo consumo de recursos mediante la integración Tauri, Rust y React/Preact",
+            "Persistencia local segura usando SQLite cifrado con SQLCipher",
+            "Arquitectura desacoplada lista para migración transparente hacia la nube",
+            "Diseño backend modular con Actix-web aplicando Clean Architecture"
+          ],
+          stack: ["Rust", "Tauri", "React", "Actix-web", "SQLCipher", "SQLite"],
+        },
         {
           title: "Cliente de Chat para LLMs Locales",
           status: "Privado",
@@ -284,39 +307,10 @@ export const MESSAGES = {
           stack: ["Rust", "Tauri", "TypeScript", "Preact"],
         },
         {
-          title: "Sistema ERP (Facturación e Inventario Relacional)",
-          status: "En desarrollo",
-          description:
-            "Diseño e implementación de un ERP orientado a consistencia de inventario en tiempo real, capaz de modelar dependencias entre productos mediante estructuras BOM y propagar actualizaciones de stock en forma transaccional a través de múltiples almacenes.",
-          highlights: [
-            "Grafo de dependencias entre SKUs para stock derivado",
-            "Descomposición de inventario vía BOM (recipes)",
-            "Actualización transaccional de combos y productos compuestos",
-            "Consistencia de stock multi-almacén",
-            "Localización física de inventario",
-            "Modelo relacional optimizado para propagación de estado"
-          ],
-          stack: ["PostgreSQL", "Tauri", "TypeScript", "Preact", "Rust", "Actix-web"],
-        },
-        {
-          title: "WebApp E-commerce Modular",
-          status: "En reestructuración",
-          description:
-            "Aplicación e-commerce full-stack con arquitectura backend-first orientada a separación de dominios y despliegue reproducible mediante contenedores.",
-          highlights: [
-            "Arquitectura modular basada en dominios",
-            "API relacional orientada a integridad transaccional",
-            "Workflow de desarrollo contenedorizado",
-            "Separación de capas aplicación/datos",
-            "Preparada para escalabilidad horizontal"
-          ],
-          stack: ["TypeScript", "PostgreSQL", "NodeJS", "Express"],
-        },
-        {
           title: "Sistema de Generación de Datos Sintéticos",
           status: "Privado / Prototipo",
           description:
-            "Pipeline de generación de identidades sintéticas para testing que integra derivación de identificadores únicos, hashing criptográfico de credenciales y cifrado simétrico para datos reversibles.",
+            "Pipeline de generación de identidades sintéticas para testing que integra derivación de identificadores únicos, hashing criptográfico de credenciales (Argon2) y cifrado AES-GCM.",
           highlights: [
             "Generación determinística de IDs (nanoid)",
             "Hashing de credenciales con Argon2",
@@ -324,7 +318,7 @@ export const MESSAGES = {
             "Seeded data generation con faker.js",
             "Preparado para entornos de testing"
           ],
-          stack: ["TypeScript", 'Preact', 'Tauri'],
+          stack: ["TypeScript", "Preact", "Tauri", "Rust"],
         },
         {
           title: "Aplicación de Tareas Type-Safe",

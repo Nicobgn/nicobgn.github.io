@@ -71,6 +71,8 @@ export const Layout: FunctionalComponent = ({ children }) => {
           <p class={'text-sm opacity-70 text-center'}>
             &copy; 2026 -{' '}
             <Link href="https://github.com/Nicobgn">Nicolás Barragán</Link>
+            -{' '}
+            <Link href='https://linkedin.com/in/nicobgn'>LinkedIn</Link>
           </p>
         </footer>
       </div>

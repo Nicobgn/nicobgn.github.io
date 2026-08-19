@@ -156,7 +156,7 @@ export const MESSAGES = {
         }
       },
       privacyNote: "Messages sent through this form are delivered via FormSubmit (formsubmit.co). Please avoid including sensitive information.",
-      deliveryNote: 'If you don\'t receive a reply within a few days, feel free to reach out via LinkedIn or GitHub.',
+      deliveryNote: 'If you don\'t receive a reply within a few days, feel free to reach out via LinkedIn.',
     },
   },
   es: {
@@ -315,7 +315,7 @@ export const MESSAGES = {
         }
       },
       privacyNote: "Los mensajes se envían mediante FormSubmit (formsubmit.co). Evitá incluir información sensible.",
-      deliveryNote: "Si no recibís respuesta en unos días, podés contactarme por LinkedIn o GitHub.",
+      deliveryNote: "Si no recibís respuesta en unos días, podés contactarme por LinkedIn.",
     },
   },
 } as const;
